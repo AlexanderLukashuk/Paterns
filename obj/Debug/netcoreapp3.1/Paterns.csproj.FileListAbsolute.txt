@@ -1,0 +1,12 @@
+/Users/sanya/paternsCsharp_study/Введение/Paterns/bin/Debug/netcoreapp3.1/Paterns.deps.json
+/Users/sanya/paternsCsharp_study/Введение/Paterns/bin/Debug/netcoreapp3.1/Paterns.runtimeconfig.json
+/Users/sanya/paternsCsharp_study/Введение/Paterns/bin/Debug/netcoreapp3.1/Paterns.runtimeconfig.dev.json
+/Users/sanya/paternsCsharp_study/Введение/Paterns/bin/Debug/netcoreapp3.1/Paterns.dll
+/Users/sanya/paternsCsharp_study/Введение/Paterns/bin/Debug/netcoreapp3.1/Paterns.pdb
+/Users/sanya/paternsCsharp_study/Введение/Paterns/obj/Debug/netcoreapp3.1/Paterns.csprojAssemblyReference.cache
+/Users/sanya/paternsCsharp_study/Введение/Paterns/obj/Debug/netcoreapp3.1/Paterns.AssemblyInfoInputs.cache
+/Users/sanya/paternsCsharp_study/Введение/Paterns/obj/Debug/netcoreapp3.1/Paterns.AssemblyInfo.cs
+/Users/sanya/paternsCsharp_study/Введение/Paterns/obj/Debug/netcoreapp3.1/Paterns.csproj.CoreCompileInputs.cache
+/Users/sanya/paternsCsharp_study/Введение/Paterns/obj/Debug/netcoreapp3.1/Paterns.dll
+/Users/sanya/paternsCsharp_study/Введение/Paterns/obj/Debug/netcoreapp3.1/Paterns.pdb
+/Users/sanya/paternsCsharp_study/Введение/Paterns/obj/Debug/netcoreapp3.1/Paterns.genruntimeconfig.cache
