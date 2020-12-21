@@ -22,13 +22,33 @@ namespace Paterns
             #endregion
 
 
-            IFanFactory MySimpleFanFactory = new FanFactory();
+            /*IFanFactory MySimpleFanFactory = new FanFactory();
             IFan fan = MySimpleFanFactory.CreateFan(FanType.OfficeFan);
+            fan.SwitchOn();
+            fan = MySimpleFanFactory.CreateFan(FanType.HairFan);
             fan.SwitchOn();
 
             IPetFactory petFactory = new PetFactory();
             IPet pet = petFactory.Create(PetType.Cat);
             pet.Talk();
+
+            Console.ReadLine();*/
+
+            /*IFanFactory2 factory2 = new PCFanFactory();
+            IFan2 fan = factory2.CreateFan();
+            fan.SwitchOn();
+
+            factory2 = new AutoFanFactory();
+            fan = factory2.CreateFan();
+            fan.SwitchOn();
+
+            IPetFactory2 petFactory2 = new CatFactory2();
+            IPet2 pet2 = petFactory2.CreatePet();
+            pet2.Sound();*/
+
+            IElectricalFactory electricalFactory = new KazakhType();
+            IFan3 fan3 = electricalFactory.GetFan();
+            fan3.SwitchOn();
 
             Console.ReadLine();
         }
