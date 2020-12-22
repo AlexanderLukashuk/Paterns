@@ -21,7 +21,7 @@ namespace Paterns
             //Console.WriteLine(child3.dt.ToString());
             #endregion
 
-
+            #region
             /*IFanFactory MySimpleFanFactory = new FanFactory();
             IFan fan = MySimpleFanFactory.CreateFan(FanType.OfficeFan);
             fan.SwitchOn();
@@ -46,9 +46,32 @@ namespace Paterns
             IPet2 pet2 = petFactory2.CreatePet();
             pet2.Sound();*/
 
-            IElectricalFactory electricalFactory = new KazakhType();
+            /*IElectricalFactory electricalFactory = new KazakhType();
             IFan3 fan3 = electricalFactory.GetFan();
-            fan3.SwitchOn();
+            fan3.SwitchOn();*/
+            #endregion
+
+            //Singleton singleton1 = new Singleton();
+            //Singleton singleton2 = new Singleton();
+
+            /*var mySingleton1 = Singleton.CreateOrGetInstance();
+            //Console.WriteLine(mySingleton1.ToString());
+            var getHash1 = mySingleton1.GetHashCode().ToString();
+            
+            var mySingleton2 = Singleton.CreateOrGetInstance();
+            //Console.WriteLine(mySingleton2.ToString());
+            var getHash2 = mySingleton2.GetHashCode().ToString();
+
+            //Console.WriteLine(getHash1.ToString());
+            //Console.WriteLine(getHash2.ToString());
+            Console.WriteLine(mySingleton1.Equals(mySingleton2));*/
+
+            Barista barista = new Barista();
+            CoffeeBuilder coffeeBuilder = new Capuchino();
+            var capuchino = barista.MakeCoffee(coffeeBuilder);
+            Console.WriteLine(capuchino.ToString());
+
+
 
             Console.ReadLine();
         }
