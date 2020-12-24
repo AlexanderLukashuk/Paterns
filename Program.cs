@@ -71,14 +71,23 @@ namespace Paterns
             var capuchino = barista.MakeCoffee(coffeeBuilder);
             Console.WriteLine(capuchino.ToString());*/
 
-            Baker baker = new Baker();
+            /*Baker baker = new Baker();
             BakedGoodsBuilder bakedGoodsBuilder = new Bread();
             var bread = baker.MakeBakedGoods(bakedGoodsBuilder);
             Console.WriteLine(bread.ToString());
 
             bakedGoodsBuilder = new Lavash();
             var lavash = baker.MakeBakedGoods(bakedGoodsBuilder);
-            Console.WriteLine(lavash.ToString());
+            Console.WriteLine(lavash.ToString());*/
+
+            ICoffee coffee = new Capuchino2(50, 50, 50, 50);
+            ICoffee coffee_clone = coffee.Clone();
+            coffee_clone.GetInfo();
+            //coffee.GetInfo();
+
+            coffee = new Espresso2(50, 20, 50, 0);
+            coffee_clone = coffee.Clone();
+            coffee_clone.GetInfo();
 
 
 
