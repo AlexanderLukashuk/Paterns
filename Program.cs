@@ -66,10 +66,19 @@ namespace Paterns
             //Console.WriteLine(getHash2.ToString());
             Console.WriteLine(mySingleton1.Equals(mySingleton2));*/
 
-            Barista barista = new Barista();
+            /*Barista barista = new Barista();
             CoffeeBuilder coffeeBuilder = new Capuchino();
             var capuchino = barista.MakeCoffee(coffeeBuilder);
-            Console.WriteLine(capuchino.ToString());
+            Console.WriteLine(capuchino.ToString());*/
+
+            Baker baker = new Baker();
+            BakedGoodsBuilder bakedGoodsBuilder = new Bread();
+            var bread = baker.MakeBakedGoods(bakedGoodsBuilder);
+            Console.WriteLine(bread.ToString());
+
+            bakedGoodsBuilder = new Lavash();
+            var lavash = baker.MakeBakedGoods(bakedGoodsBuilder);
+            Console.WriteLine(lavash.ToString());
 
 
 
