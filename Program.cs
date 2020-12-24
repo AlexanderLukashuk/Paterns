@@ -80,14 +80,17 @@ namespace Paterns
             var lavash = baker.MakeBakedGoods(bakedGoodsBuilder);
             Console.WriteLine(lavash.ToString());*/
 
-            ICoffee coffee = new Capuchino2(50, 50, 50, 50);
+            /*ICoffee coffee = new Capuchino2(50, 50, 50, 50);
             ICoffee coffee_clone = coffee.Clone();
             coffee_clone.GetInfo();
             //coffee.GetInfo();
 
             coffee = new Espresso2(50, 20, 50, 0);
             coffee_clone = coffee.Clone();
-            coffee_clone.GetInfo();
+            coffee_clone.GetInfo();*/
+
+            MyFan myFan = new MyFan(new TableFan4());
+            myFan.MyFanWork();
 
 
 
