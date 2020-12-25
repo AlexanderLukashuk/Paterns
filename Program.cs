@@ -108,7 +108,11 @@ namespace Paterns
 
             CoffeeDrink2 coffeeDrink = new Espresso4();
             coffeeDrink = new LikerCoffee(coffeeDrink);
-            Console.WriteLine(coffeeDrink.Name + " - " + coffeeDrink.GetCost());
+            Console.WriteLine(coffeeDrink.Name + " -  D = " + coffeeDrink.GetCost());
+
+            Pizza pizza = new Pepperoni();
+            pizza = new HellishSpicyPizza(pizza);
+            Console.WriteLine(pizza.Name + " - " + pizza.GetSize());
 
 
 
