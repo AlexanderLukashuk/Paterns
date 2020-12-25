@@ -107,6 +107,7 @@ namespace Paterns
             breadMaking.Make();*/
 
             CoffeeDrink2 coffeeDrink = new Espresso4();
+            coffeeDrink = new LikerCoffee(coffeeDrink);
             Console.WriteLine(coffeeDrink.Name + " - " + coffeeDrink.GetCost());
 
 
