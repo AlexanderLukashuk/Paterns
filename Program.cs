@@ -97,14 +97,17 @@ namespace Paterns
             //capuchino.Make();
             //espresso.Make();
 
-            CoffeeMaking someCoffeeDrink = new Capuchino3();
+            /*CoffeeMaking someCoffeeDrink = new Capuchino3();
             someCoffeeDrink.Make();
             someCoffeeDrink = new Espresso3();
             someCoffeeDrink.Make();
             Console.WriteLine();
 
             BreadMaking breadMaking = new Bun2();
-            breadMaking.Make();
+            breadMaking.Make();*/
+
+            CoffeeDrink2 coffeeDrink = new Espresso4();
+            Console.WriteLine(coffeeDrink.Name + " - " + coffeeDrink.GetCost());
 
 
 
