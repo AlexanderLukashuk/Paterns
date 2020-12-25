@@ -101,6 +101,10 @@ namespace Paterns
             someCoffeeDrink.Make();
             someCoffeeDrink = new Espresso3();
             someCoffeeDrink.Make();
+            Console.WriteLine();
+
+            BreadMaking breadMaking = new Bun2();
+            breadMaking.Make();
 
 
 
