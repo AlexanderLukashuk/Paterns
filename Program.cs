@@ -89,8 +89,18 @@ namespace Paterns
             coffee_clone = coffee.Clone();
             coffee_clone.GetInfo();*/
 
-            MyFan myFan = new MyFan(new TableFan4());
-            myFan.MyFanWork();
+            /*MyFan myFan = new MyFan(new TableFan4());
+            myFan.MyFanWork();*/
+
+            //Capuchino3 capuchino = new Capuchino3();
+            //Espresso3 espresso = new Espresso3();
+            //capuchino.Make();
+            //espresso.Make();
+
+            CoffeeMaking someCoffeeDrink = new Capuchino3();
+            someCoffeeDrink.Make();
+            someCoffeeDrink = new Espresso3();
+            someCoffeeDrink.Make();
 
 
 
