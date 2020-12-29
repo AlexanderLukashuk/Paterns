@@ -1,8 +1,190 @@
 ﻿using System;
 using Paterns.Models;
+using System.Collections.Generic;
 
 namespace Paterns
 {
+    //? solid O - opened/closed - функции должны быть открыты для расширение
+    //? и закрыты для изменения
+
+    //? l - правильное наследование
+
+    //? принцип разделения интерфейсов
+
+    //? инверсия зависимостей - классы высокого уровня
+    //? зависят от классов низкого уровня,
+    //? а низкие зависят от абстрактных классов
+
+    public class Employee
+    {
+        public IEmployeeReport Report;
+        public Employee(IEmployeeReport report)
+        {
+            Report = report;
+        }
+
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public bool Add(Employee emp)
+        {
+            return true;
+        }
+
+        public void MakeReport()
+        {
+            Report.MakeReport(this);
+        }
+
+        //! не должны подобные методы находиться в этом классе
+        /*public void MakeReportExcel(Employee emp)
+        {
+            ;
+        }
+        public void MakeReportPDF(Employee emp)
+        {
+            ;
+        }
+        public void MakeReportCSV(Employee emp)
+        {
+            ;
+        }*/
+    }
+
+
+    public abstract class Emp
+    {
+        public virtual string GetWorkDetalis(int id)
+        {
+            return "Base Work";
+        }
+        public virtual string GetEmpDetalis(int id)
+        {
+            return "Base Employee";
+        }
+    }
+
+    public class Senior : Emp
+    {
+        public override string GetWorkDetalis(int id)
+        {
+            return "Senior Work";
+        }
+        public override string GetEmpDetalis(int id)
+        {
+            return "Senior Employee";
+        }
+    }
+
+    public class Junior : Emp
+    {
+        public override string GetWorkDetalis(int id)
+        {
+            throw new NotImplementedException();
+        }
+        public override string GetEmpDetalis(int id)
+        {
+            return "Junior Employee";
+        }
+    }
+
+
+    /*class EmployeeReport
+    {
+        string TypeReport;
+        public void MakeReportExcel(Employee emp)
+        {
+            if (TypeReport == "CSV")
+            {
+                ;
+            }
+            else if (TypeReport == "PDF")
+            {
+                ;
+            }
+            else if (TypeReport == "Excel")
+            {
+                ;
+            }
+        }
+    }*/
+
+    public interface IEmployeeReport
+    {
+        void MakeReport(Employee emp);
+    }
+
+    public class EmployeeReportCVS : IEmployeeReport
+    {
+        public void MakeReport(Employee emp)
+        {
+            Console.WriteLine("print in CSV format");
+        }
+    }
+
+    public class EmployeeReportPDF : IEmployeeReport
+    {
+        public void MakeReport(Employee emp)
+        {
+            Console.WriteLine("print in PDF format");
+        }
+    }
+
+    
+    //? solid S - single responsobolity - класс выполняет только одну функцию
+    //? контролирует только определенные действия
+    class Country
+    {
+        void Add() {}
+        void Del() {}
+        void Select() {}
+        void Update() {}
+
+        void Travel() {}
+    }
+
+    public class Email
+    {
+        public void Send()
+        {
+            ;
+        }
+    }
+
+    public class Notification
+    {
+        //Email email;
+        IMessenger Messenger;
+        public Notification(IMessenger messenger)
+        {
+            Messenger = new Email2();
+        }
+        public void EmailDistr()
+        {
+            Messenger.Send();
+        }
+    }
+
+    public interface IMessenger
+    {
+        void Send();
+    }
+
+    public class Email2 : IMessenger
+    {
+        public void Send()
+        {
+            ;
+        }
+    }
+
+    public class SMS : IMessenger
+    {
+        public void Send()
+        {
+            ;
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
@@ -106,17 +288,32 @@ namespace Paterns
             BreadMaking breadMaking = new Bun2();
             breadMaking.Make();*/
 
-            CoffeeDrink2 coffeeDrink = new Espresso4();
+            /*CoffeeDrink2 coffeeDrink = new Espresso4();
             coffeeDrink = new LikerCoffee(coffeeDrink);
             Console.WriteLine(coffeeDrink.Name + " -  D = " + coffeeDrink.GetCost());
 
             Pizza pizza = new Pepperoni();
             pizza = new HellishSpicyPizza(pizza);
-            Console.WriteLine(pizza.Name + " - " + pizza.GetSize());
+            Console.WriteLine(pizza.Name + " - " + pizza.GetSize());*/
 
 
+            //Employee employee = new Employee(new EmployeeReportPDF());
+            //employee.MakeReport();
+
+            List<Emp> list = new List<Emp>();
+            list.Add(new Senior());
+            list.Add(new Junior());
+
+            foreach ( var item in list)
+            {
+                Console.WriteLine(item.GetEmpDetalis(123));
+                Console.WriteLine(item.GetWorkDetalis(123));
+            }
 
             Console.ReadLine();
+
+            //? при построении всей иерархии, наследники должны правильно наследовать примеру базовых классов
+            //? Наследники не должны сильно изменять базовый класс
         }
     }
 }
